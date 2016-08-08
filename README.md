@@ -1,0 +1,2 @@
+# logstash-filebeat-config-template
+logstash和filebeat相关配置文件以及grok所需的patterns都会在这个工程里维护
