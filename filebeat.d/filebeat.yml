@@ -54,12 +54,12 @@ filebeat.prospectors:
   multiline.pattern: ^20\d\d-(2[0123]|[01]?[0-9])-[0-5][0-9]
 
   # Defines if the pattern set under pattern should be negated or not. Default is false.
-  #multiline.negate: false
+  multiline.negate: true
 
   # Match can be set to "after" or "before". It is used to define if lines should be append to a pattern
   # that was (not) matched before or after or as long as a pattern is not matched based on negate.
   # Note: After is the equivalent to previous and before is the equivalent to to next in Logstash
-  multiline.match: before
+  multiline.match: after
 
 
 #================================ General =====================================
