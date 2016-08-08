@@ -49,13 +49,17 @@ filebeat.prospectors:
   # The regexp Pattern that has to be matched. The example pattern matches all lines starting with [
   #multiline.pattern: ^\[
 
+  # The regexp Pattern that has to be matched. The example pattern matches all lines starting with [
+  # the matcher for spring boot default log format
+  multiline.pattern: ^20\d\d-(2[0123]|[01]?[0-9])-[0-5][0-9]
+
   # Defines if the pattern set under pattern should be negated or not. Default is false.
   #multiline.negate: false
 
   # Match can be set to "after" or "before". It is used to define if lines should be append to a pattern
   # that was (not) matched before or after or as long as a pattern is not matched based on negate.
   # Note: After is the equivalent to previous and before is the equivalent to to next in Logstash
-  #multiline.match: after
+  multiline.match: before
 
 
 #================================ General =====================================
