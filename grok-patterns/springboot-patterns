@@ -1,5 +1,7 @@
-SPRINGTIMESTAMP 20%{YEAR}-%{MONTHNUM}-%{MONTHDAY} %{HOUR}:?%{MINUTE}(?::?%{SECOND})
+SPRINGTIMESTAMP 20%{YEAR}-%{MONTHNUM}-%{MONTHDAY}(?:\s+)%{HOUR}:?%{MINUTE}(?::?%{SECOND})
 
 ANYTHING (?:.+)
 
-SPRINGBOOTLOG %{SPRINGTIMESTAMP:timestamp}(?:\s+)%{LOGLEVEL:level} %{INT:processId} --- \[%{ANYTHING:threadname}\] %{JAVACLASS:class}(?:\s+): %{ANYTHING:content}
+SPRINGBOOTLOG %{SPRINGTIMESTAMP:timestamp}(?:\s+)%{LOGLEVEL:level}(?:\s+)%{INT:processId}(?:\s+)---(?:\s+)\[%{ANYTHING:threadname}\] %{JAVACLASS:class}(?:\s+):(?:\s+)%{ANYTHING:content}
+
+LOG4JLOG %{SPRINGTIMESTAMP:timestamp}(?:\s+)%{LOGLEVEL:level}(?:\s+)---(?:\s+)\[%{ANYTHING:threadname}\] %{JAVACLASS:class}(?:\s+):(?:\s+)%{ANYTHING:content}
